@@ -6,11 +6,11 @@
 
 // CHECK-LABEL: func.func @ceildivui_simple
 func.func @ceildivui_simple(%a: i32, %b: i32) -> i32 {
-  // CHECK: %[[ONE:.*]] = arith.constant 1 : i32
-  // CHECK: %[[B1:.*]] = arith.subi %arg1, %[[ONE]] : i32
-  // CHECK: %[[SUM:.*]] = arith.addi %arg0, %[[B1]] : i32
-  // CHECK: %[[RES:.*]] = arith.divui %[[SUM]], %arg1 : i32
-  // CHECK: return %[[RES]] : i32
+  // CHECK-NEXT: %[[ONE:.*]] = arith.constant 1 : i32
+  // CHECK-NEXT: %[[B1:.*]] = arith.subi %arg1, %[[ONE]] : i32
+  // CHECK-NEXT: %[[SUM:.*]] = arith.addi %arg0, %[[B1]] : i32
+  // CHECK-NEXT: %[[RES:.*]] = arith.divui %[[SUM]], %arg1 : i32
+  // CHECK-NEXT: return %[[RES]] : i32
   %r = arith.ceildivui %a, %b : i32
   return %r : i32
 }
@@ -19,11 +19,11 @@ func.func @ceildivui_simple(%a: i32, %b: i32) -> i32 {
 
 // CHECK-LABEL: func.func @ceildivsi_simple
 func.func @ceildivsi_simple(%a: i32, %b: i32) -> i32 {
-  // CHECK: %[[ONE:.*]] = arith.constant 1 : i32
-  // CHECK: %[[B1:.*]] = arith.subi %arg1, %[[ONE]] : i32
-  // CHECK: %[[SUM:.*]] = arith.addi %arg0, %[[B1]] : i32
-  // CHECK: %[[RES:.*]] = arith.divsi %[[SUM]], %arg1 : i32
-  // CHECK: return %[[RES]] : i32
+  // CHECK-NEXT: %[[ONE:.*]] = arith.constant 1 : i32
+  // CHECK-NEXT: %[[B1:.*]] = arith.subi %arg1, %[[ONE]] : i32
+  // CHECK-NEXT: %[[SUM:.*]] = arith.addi %arg0, %[[B1]] : i32
+  // CHECK-NEXT: %[[RES:.*]] = arith.divsi %[[SUM]], %arg1 : i32
+  // CHECK-NEXT: return %[[RES]] : i32
   %r = arith.ceildivsi %a, %b : i32
   return %r : i32
 }
@@ -43,11 +43,11 @@ func.func @both_ops(%a: i32, %b: i32) -> i32 {
 
 // CHECK-LABEL: func.func @ceildivui_i64
 func.func @ceildivui_i64(%a: i64, %b: i64) -> i64 {
-  // CHECK: %[[ONE:.*]] = arith.constant 1 : i64
-  // CHECK: %[[B1:.*]] = arith.subi %arg1, %[[ONE]] : i64
-  // CHECK: %[[SUM:.*]] = arith.addi %arg0, %[[B1]] : i64
-  // CHECK: %[[RES:.*]] = arith.divui %[[SUM]], %arg1 : i64
-  // CHECK: return %[[RES]] : i64
+  // CHECK-NEXT: %[[ONE:.*]] = arith.constant 1 : i64
+  // CHECK-NEXT: %[[B1:.*]] = arith.subi %arg1, %[[ONE]] : i64
+  // CHECK-NEXT: %[[SUM:.*]] = arith.addi %arg0, %[[B1]] : i64
+  // CHECK-NEXT: %[[RES:.*]] = arith.divui %[[SUM]], %arg1 : i64
+  // CHECK-NEXT: return %[[RES]] : i64
   %r = arith.ceildivui %a, %b : i64
   return %r : i64
 }
@@ -56,8 +56,8 @@ func.func @ceildivui_i64(%a: i64, %b: i64) -> i64 {
 
 // CHECK-LABEL: func.func @no_ceildiv
 func.func @no_ceildiv(%a: i32, %b: i32) -> i32 {
-  // CHECK: %[[RES:.*]] = arith.divsi %arg0, %arg1 : i32
-  // CHECK: return %[[RES]] : i32
+  // CHECK-NEXT: %[[RES:.*]] = arith.divsi %arg0, %arg1 : i32
+  // CHECK-NEXT: return %[[RES]] : i32
   %r = arith.divsi %a, %b : i32
   return %r : i32
 }
