@@ -1,5 +1,4 @@
 #include "mlir/Dialect/Arith/IR/Arith.h"
-#include "mlir/IR/BuiltinTypes.h"
 #include "mlir/Pass/Pass.h"
 #include "mlir/Tools/Plugins/PassPlugin.h"
 #include "mlir/IR/BuiltinOps.h"
@@ -29,6 +28,7 @@ public:
       }
     });
   }
+
 private:
   template <typename CeilDivOpTy>
   void changeCeilDiv(CeilDivOpTy op, bool isSigned) {
@@ -48,6 +48,7 @@ private:
   }
 };
 }
+
 MLIR_DECLARE_EXPLICIT_TYPE_ID(CeilDivPass)
 MLIR_DEFINE_EXPLICIT_TYPE_ID(CeilDivPass)
 mlir::PassPluginLibraryInfo getCeilDivPassPluginInfo() {
